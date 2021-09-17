@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/stylemainpage.css">
+	<title>MainPage</title>
+</head>
+<body>
+	<div class="layout">
+		<aside>		
+			<h1>aside</h1>
+		</aside>
+		<main>
+			<header class="header-element-position">
+				<div class="header-logo"><a href=""><img src="../img/logo.png" alt="logo"> </a></div>
+				<nav class="language_currency-selector">
+					<ul class="topmenu">
+						<li><a id="selector" href="#">RU</a>
+						 	<ul class="submenu">
+				        <li><a id="selector" href="">EN</a></li>
+      				</ul>
+      			</li>
+      			<li><a id="selector" href="#">RUB</a>
+						 	<ul class="submenu">
+				        <li><a id="selector" href="">USD</a></li>
+				        <li><a id="selector" href="">EUR</a></li>
+      				</ul>
+      			</li>
+      			<li><a id="selector" href="#">DARK</a>
+						 	<ul class="submenu">
+				        <li><a id="selector" href="">LIGHT</a></li>
+				        <li><a id="selector" href="">GLASS</a></li>
+      				</ul>
+      			</li>
+					</ul>
+				</nav>
+				<div class="profile-photo">
+					<a href="#"><img src="../img/customization.png" alt="customization"></a>
+				</div>	
+			</header>
+			<div class="content">
+				<section>
+					<div class="statistic flexblock">
+						<div class="statistic-diogramm">
+							<div class="table-hover-info"></div>
+							<h1>block1</h1>
+						</div>
+						<div class="statistic-diogramm">
+							
+						</div>
+						<div class="statistic-diogramm"><h1>block3</h1></div>
+					</div>
+					<h1>Мои Криптовалюты</h1>
+
+					<div class="main-table">
+						<div class="main-column-name">
+							<table class="table_col">
+							  <thead>						 
+							    <th>Название портфеля</th>
+								<th>Колличество активов</th>
+								<th>Стоимость в ВТС</th>
+								<th>Прибыль</th>
+								<th>Дата создания</th>
+								<th>Функции</th>
+							  </thead>
+							  <tbody>
+								<tr>
+								    <td>Первый портфель</td>
+									<td>15</td>
+									<td>0.12323</td>
+									<td>+1500$</td>
+									<td>12.12.2012</td>
+									<td><input type="button" class="delete" name="delete" value="Удалить" ></td>	
+								</tr>
+								<tr>
+								    <td>Второй портфель</td>
+									<td>25</td>
+									<td>42.12323</td>
+									<td>+11200$</td>
+									<td>12.12.2012</td>
+									<td><input type="button" class="delete" name="delete" value="Удалить" ></td>		
+								</tr>
+								  <tr>
+								    <td>Третий портфель</td>
+									<td>35</td>
+									<td>1212.12323</td>
+									<td>+500$</td>
+									<td>12.12.2222</td>
+									<td><input type="button" class="delete" name="delete" value="Удалить" ></td>
+								</tr>
+								  <tr>
+								    <td>Четвертый портфель</td>
+									<td>11</td>
+									<td>12.12323</td>
+									<td>+132300$</td>
+									<td>12.12.2112</td>
+									<td><input type="button" class="delete" name="delete" value="Удалить" ></td>		
+								 </tr>
+							  </tbody>
+							</table>
+						</div>
+						<div class="add" id="createportfolio">Добавить новый портфель</div>
+					</div>
+				</section>
+				<footer><h1></h1></footer>
+			</div>
+		</main>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script language="JavaScript" type="text/javascript" src="../js/mainpage.js"></script>
+
+
+</body>
+</html>

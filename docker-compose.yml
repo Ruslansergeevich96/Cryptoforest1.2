@@ -1,0 +1,53 @@
+version: "3.8"
+ 
+services:
+
+  db:
+    image: mariadb
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./docker/db/config/main.cnf:/etc/mysql/my.cnf
+      - ./docker/db/skelet/main:/docker-entrypoint-initdb.d
+    networks:
+      - app-net
+
+    
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    networks:
+      - app-net
+    ports:
+      - "8080:80"
+    environment:
+        - PMA_ARBITRARY=1
+        - PMA_HOST=db
+        - MYSQL_ROOT_PASSWORD=123456
+
+  node:
+    image: node
+    working_dir: /app/backend
+    depends_on: 
+      - db
+    networks: 
+      - app-net
+    environment: 
+      - PORT=7200
+    ports: 
+      - "7200:7200"
+    volumes:
+      - ./app:/app
+    command: bash -c "sleep 5 && npm run start"
+
+volumes:
+  db-data:
+   driver: local
+
+networks:
+  app-net:
+    driver: bridge

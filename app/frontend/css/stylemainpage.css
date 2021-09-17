@@ -1,0 +1,330 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.clearfix:after{ /*Важная штука для позиционирования*/
+	content: "";
+	display: table;
+	clear: both;
+}
+.wrapper{
+	margin: 0 auto; 
+ 	max-width: 1440px;
+}
+.flexblock{
+	display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex-direction: row;
+}
+.flexblock-main{
+	display: flex;
+  align-items: center;
+}
+html, body * {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body{
+	padding: 0;
+	margin: 0;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-image: linear-gradient( rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.8) ), url(../img/bg.jpg);
+	background-color: #25312f;
+}
+@media (min-width: 980px) {
+body {
+    width: 100%;
+}
+}
+.layout{
+  	overflow: hidden;
+}
+header{
+	width: 100%;
+	height: 100px;
+	/*стеклянный эффект*/ 
+	box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);	
+	position: relative;
+	z-index: 1;
+	background: inherit;
+	opacity: 0.5;
+	transition: opacity 1.0s ease .1s;
+}
+.header-glass{
+	opacity: 1;
+}
+
+header:before {
+ 	content: "";
+	position: absolute;
+	background: inherit;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	box-shadow: inset 0 0 2000px 40px rgba(39, 48, 47, .65);
+	filter: blur(3px);
+	margin: -3px;
+}
+.header-element-position{
+	position: fixed;
+  top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+ 	width: 100%;
+  z-index: 2;
+	display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+  flex-direction: row;
+}
+.header-logo{
+	padding-right: 20px;
+}
+img[alt="logo"]{
+	width: 199px;
+ 	margin-top: 25px;
+}
+.profile-photo {
+ 	min-height: 70px;
+  min-width: 70px;
+  margin-left: 20px;
+  margin-right: 50px;
+  border-radius: 70px;
+  background: url(../img/avatar.png);
+  background-size: 100% 120%;
+	background-position: 100% 100%;
+  border: solid 3px #ffffff;
+}
+@media screen and (max-width: 600px) { div.profile-photo {
+	min-height: 65px;
+  min-width: 65px;
+	} 
+}
+.profile-photo:hover{
+	box-shadow: 0 0 15px rgb(255,255,255);
+	transition: box-shadow .3s ease .1s;
+}
+img[alt="customization"]{
+	height: 57px;
+  width: 57px;
+  position: fixed;
+  opacity: 0;
+  margin-top: 4px;
+  margin-left: 4px;
+}
+img[alt="customization"]:hover{
+	opacity: 0.5;
+	transition: opacity .3s ease .1s;
+}
+nav {
+  margin-left: auto;
+  min-width: 266px;
+  color: inherit;
+}
+ul {
+  list-style: none; 
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.topmenu > li {
+  display: inline-block;
+  margin-right: 15px;
+  position: relative;
+}
+#selector {
+  display: block;
+  padding: 7px 17px;
+  text-decoration: none;
+  outline: none;
+  font-family: "Aazoft-sans", serif;
+  transition: .5s linear;
+  color: inherit;
+}
+#selector:hover{
+	box-shadow: 0 0 15px rgb(255,255,255);
+	transition: box-shadow .1s ease .1s;
+}
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.language_currency-selector li {
+  background: rgba(255, 255, 255, 0.2);
+}
+.language_currency-selector ul a {
+  border: 1px solid #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+.language_currency-selector .submenu {
+  visibility: hidden;
+  opacity: 0;
+  background: #929292;
+}
+.language_currency-selector ul li:hover .submenu {
+  visibility: visible;
+  opacity: 1;
+}
+main{
+	padding-left: 200px;
+  	display: flex;
+  	flex-direction: column;
+  	height: 100%;
+}
+
+aside{
+	position: fixed;
+	left: 0;
+	top: 0;
+	padding-top: 100px;
+	z-index: 1;
+	width: 200px;
+	height: 100%;
+	flex: inherit;
+	border-right: 1px solid hsla(0,0%,100%,.13);
+
+}
+.content{
+	width: 100%;
+	height: 100%;
+	padding-top: 100px;
+
+}
+section{
+	width: 100%;
+	height: 100%;
+	min-height: 1200px;
+	background-color: #a7a7a7;
+}
+
+.statistic-diogramm{
+	width: 300px;
+	height: 300px;
+	border: 2px solid black;
+}
+
+.main-table{
+	width: 100%;
+	border: 2px solid red;
+}
+.main-column_name{
+	width: 30px;
+}
+.main-table_content{
+	width: 100%;
+	height: 100%;
+	border: 2px solid white;
+}
+.portfolio{
+	width: 100%;
+	height: 35px;
+}
+.add{
+	width: 90%;
+	height: 55px;
+	margin: 10px auto; 
+  overflow: hidden;
+  box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%);
+  border-radius: 13px;
+  position: relative;
+  z-index: 1;
+  background: inherit;
+  opacity: 0.5;
+  transition: opacity 1.0s ease .1s;
+  text-align: center;
+  padding-top: 19px;
+  user-select: none;
+}
+.add:before{
+	content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px 40px rgb(39 48 47 / 90%);
+  filter: blur(10px);
+  margin: -20px;
+}
+.add:hover{
+	box-shadow: 0 0 15px rgb(255,255,255);
+	transition: box-shadow .1s ease .1s, color .1s ease .1s;
+	color: #fff;
+}
+.add:active{
+	box-shadow: 0 0 40px rgb(25,188,115);
+	transition: box-shadow .15s ease .0s, color .15s ease .0s;
+	color: rgb(25,188,115);;
+}
+/** TABLE---------------------------------------- **/
+.table_col {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  font-size: 14px;
+  width: 100%;
+  background: white;
+  text-align: left;
+  border-collapse: collapse;
+  color: #3E4347;
+}
+.table_col th:first-child, .table_col td:first-child {
+	border-left: none;
+}
+.table_col th {
+	font-weight: normal;
+	border-bottom: 2px solid #F5E1A6;
+	border-right: 20px solid white;
+	border-left: 20px solid white;
+	padding: 8px 10px;
+}
+.table_col td {
+	border-right: 20px solid white;
+	border-left: 20px solid white;
+	padding: 12px 10px;
+	color: #8b8e91;
+}
+
+/** TABLE off----------------------------------------------- **/
+
+
+footer{
+	width: 100%;
+	height: 100px;
+	padding-left: 200px;
+	background-color: gray;
+}
+
+h1{
+	color: #fff;
+
+}
+@font-face {
+font-family: "Archive";  
+src: url("../fonts/Archive.otf") format("truetype");  
+font-style: normal; 
+font-weight: normal; 
+} 
+@font-face {
+font-family: "Aazoft-sans";  
+src: url("../fonts/Aazoft-sans.ttf") format("truetype");  
+font-style: normal; 
+font-weight: normal; 
+} 
