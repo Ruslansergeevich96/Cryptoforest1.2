@@ -6,17 +6,14 @@ const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const router = require ('./router/index')
 
-const Sequelize = require('sequelize')
-const sequelize = new Sequelize("my_db", "root", "123456", {
-  dialect: "mariadb",
-  host: "db"
+const mariadb = require('mariadb');
+const pool = mariadb.createPool({
+     host: 'db', 
+     user: 'root', 
+     password: '123456',
+     database: 'my_db',
+     connectionLimit: 5
 });
-
-sequelize.sync({force: true}).then(result=>{
-    console.log(result);
-  })
-  .catch(err=> console.log(err));
-
 
 const PORT = process.env.PORT || 8888;
 const app = express()
@@ -28,8 +25,20 @@ app.use('/api', router);
 
 const start = async () => {
     try {
-        await db.getConnection()
+        await pool.getConnection()
+        .then(conn => {
+        
+          conn.query("SELECT * FROM users")
+            .then((rows) => {
+              console.log(rows);
+            });
+            
+        }).catch(err => {
+          //not connected
+        });
+
         app.listen(PORT, () => console.log (`Crypto Server started on PORT = ${PORT}`))    
+    
     } catch (e) {
         console.log(e);
     }
